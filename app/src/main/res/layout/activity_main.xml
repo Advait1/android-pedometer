@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:weightSum = "100"
+    android:orientation="vertical"
+    tools:context="com.example.advait.pedometer.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Elapsed Time:"
+            android:textColor="@color/ap_gray"
+            />
+
+        <Chronometer
+            android:id="@+id/simpleChronometer"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/ap_gray"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_vertical|center"
+        android:layout_weight="75">
+
+        <TextView
+            android:id="@+id/stepCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:textSize="43sp"
+            android:textStyle="bold"
+            android:text="0"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight = "27"
+        android:layout_below="@id/text">
+
+        <com.androidplot.xy.XYPlot
+            android:id="@+id/plot"
+            style="@style/APDefacto.Light"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+</LinearLayout>
